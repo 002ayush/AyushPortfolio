@@ -8,14 +8,14 @@ import Skills from "./Skills";
 function Navbar() {
   return (
     <>
-      <div className="bg-stone-600 w-screen h-[543px]">
-        <ul className="flex gap-28 fixed  right-10  cursor-pointer text-opacity-85 z-50  top-0">
+      <div className="bg-stone-600 xsm:w-screen msm:w-screen xsm:h-[800px] msm:h-[543px]">
+        <ul className="flex msm:flex-row xsm:gap-2 gap-28 xsm:flex-col xsm:text-center msm:fixed  right-10  cursor-pointer text-opacity-85 z-50  top-0">
           <li className=" hover:opacity-70 hover:text-black">Home</li>
           <li className=" hover:opacity-70 hover:text-black">Projects</li>
           <li className=" hover:opacity-70 hover:text-black">Feedback</li>
         </ul>
 
-        <div className="flex flex-row justify-around absolute mt-20 w-screen m-auto">
+        <div className="flex msm:flex-row xsm:flex-col    msm:justify-around msm:absolute msm:mt-20 w-screen msm:m-auto">
           <div>
             <Skills />
           </div>

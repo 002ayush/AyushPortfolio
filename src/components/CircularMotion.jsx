@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Avatar } from "@mui/material";
 
 const icons = [
@@ -18,9 +18,23 @@ const location = [
 function CircularMotion() {
   const containerRef = useRef(null);
   const iconRefs = useRef([]);
+  const [fradius,setFRadius] = useState(150)
+   useEffect(() => {
+    const updateRadius = () => {
+      if (window.innerWidth <= 600) {
+        setFRadius(80); // Smaller radius for small screens
+      } else {
+        setFRadius(150); // Default radius for larger screens
+      }
+    };
 
+    updateRadius(); // Initial check
+    window.addEventListener('resize', updateRadius); // Update radius on resize
+
+    return () => window.removeEventListener('resize', updateRadius);
+  }, []);
   useEffect(() => {
-    const radius = 150; // Adjust the radius to cover the entire Avatar
+    const radius = fradius
     let angle = 0;
     const numIcons = icons.length;
 
@@ -45,17 +59,20 @@ function CircularMotion() {
     moveElements();
 
     return () => cancelAnimationFrame(moveElements);
-  }, []);
+  },[fradius]);
 
   return (
     <div
       ref={containerRef}
-      className="flex items-center justify-center w-96 h-96 rounded-full"
+      className={`flex msm:items-center xsm:mt-28 xsm:m-auto msm:justify-center msm:w-96 msm:h-96 xsm:w-56 xsm:h-56 xsm:justify-center rounded-full`}
     >
       <Avatar
         alt="Profile"
         src="/static/images/profile1.jpg"
-        sx={{ width: 256, height: 266,opacity : 0.5}}
+        sx={{ width: 256, height: 266,opacity : 0.5,'@media (max-width: 600px)' : {
+          width : 80,
+          height : 80
+          }}}
       />
       {icons.map((icon, index) => (
         <div

@@ -38,10 +38,14 @@ function CodingProfiles() {
               marginTop: "15px",
 
               backfaceVisibility: "hidden",
+              '@media (max-width: 600px)' : {
+                width : "80%",
+                height:"60%"
+              }
             }}
           >
             <CardContent sx={{ backgroundColor: "gray" }}>
-              <div className="flex flex-row items-center justify-center gap-3">
+              <div className="flex flex-row xsm:gap-0 items-center justify-center gap-3">
                 <h2 className="text-center">LeetCode Statistics</h2>
                 <div>
                   <a href="https://leetcode.com/u/texture_11/ " target="_blank"><img src={"/src/assets/global.png"} width={20} height={20} /></a>
@@ -49,7 +53,7 @@ function CodingProfiles() {
               </div>
               <div className="flex flex-row justify-between">
                 <div className="flex flex-col   items-center">
-                  <div className="rounded-full border-black border-2 p-4 w-fit bg-orange-800">
+                  <div className="rounded-full xsm:p-2 border-black border-2 p-4 w-fit bg-orange-800">
                     Easy
                   </div>
                   <div>63</div>
@@ -80,6 +84,10 @@ function CodingProfiles() {
               marginTop: "15px",
               margin:'auto',
               backfaceVisibility: "hidden",
+              '@media (max-width: 600px)' : {
+                width : "80%",
+                height:"60%",marginTop:'12px'
+              }
             }}
           >
             <CardContent sx={{ backgroundColor: "gray" }}>
@@ -107,6 +115,11 @@ function CodingProfiles() {
             marginLeft : 'auto',
               
               backfaceVisibility: "hidden",
+              '@media (max-width: 600px)' : {
+                width : "80%",
+                height:"60%",
+                marginTop:'12px'
+              }
             }}
           >
             <CardContent sx={{ backgroundColor: "gray" }}>
@@ -129,7 +142,7 @@ function CodingProfiles() {
       </div>
 
       <div>
-       <a href="/src/assets/Ayush_Resume.pdf" download> <button className="border-2 bg-gray-800 p-4 text-white rounded-2xl border-emerald-900">Download Resume</button>
+       <a href="/src/assets/Ayush_Resume.pdf" download> <button className="border-2 xsm:mt-10 bg-gray-800 p-4 text-white rounded-2xl border-emerald-900">Download Resume</button>
        </a>
       </div>
       <br></br>
