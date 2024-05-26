@@ -62,10 +62,13 @@ function CircularMotion() {
   },[fradius]);
 
   return (
+    
+    
     <div
       ref={containerRef}
-      className={`flex msm:items-center xsm:mt-28 xsm:m-auto msm:justify-center msm:w-96 msm:h-96 xsm:w-56 xsm:h-56 xsm:justify-center rounded-full`}
+      className={`flex flex-col msm:items-center xsm:items-center xsm:mt-20 xsm:m-auto msm:justify-center msm:w-96 msm:h-96 xsm:w-56 xsm:h-56 xsm:justify-center rounded-full`}
     >
+     
       <Avatar
         alt="Profile"
         src="/static/images/profile1.jpg"
@@ -78,7 +81,7 @@ function CircularMotion() {
         <div
           key={index}
           ref={(el) => (iconRefs.current[index] = el)}
-          className="absolute w-8 h-8"
+          className="absolute w-12 h-12"
         >
           <a href={`${location[index]}`} target="_blank">
             <img
@@ -90,6 +93,7 @@ function CircularMotion() {
         </div>
       ))}
     </div>
+    
   );
 }
 
