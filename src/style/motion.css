@@ -1,0 +1,18 @@
+
+@keyframes moveCircle {
+    0% {
+      transform: translateX(200px) translateY(0);
+    }
+    25% {
+      transform: translateX(200px) translateY(200px);
+    }
+    50% {
+      transform: translateX(0) translateY(200px);
+    }
+    75% {
+      transform: translateX(-200px) translateY(200px);
+    }
+    100% {
+      transform: translateX(-200px) translateY(0);
+    }
+  }
