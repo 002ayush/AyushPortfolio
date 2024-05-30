@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Avatar } from "@mui/material";
+import Typed from "typed.js";
 
 const icons = [
   "/static/images/github.png",
-  "/static/images/linkdin.png",
+  "/static/images/linkedin.png",
 
   "/static/images/twitter.png",
 
@@ -16,7 +17,7 @@ const location = [
 ];
 
 function CircularMotion() {
-  const containerRef = useRef(null);
+ 
   const iconRefs = useRef([]);
   const [fradius,setFRadius] = useState(150)
    useEffect(() => {
@@ -60,15 +61,33 @@ function CircularMotion() {
 
     return () => cancelAnimationFrame(moveElements);
   },[fradius]);
+  
+  
+  const el = useRef()
+  useEffect(() => {
+    const typed = new Typed(el.current, {
+      strings: ['My Name is Ayush Kumar Mishra',"I am a Web Developer","I am a Android Developer","I am a UI/UX Designer"],
+      typeSpeed: 50,
+      loop : true,
+      backSpeed:50
+    });
 
+
+    return () => {
+      // Destroy Typed instance during cleanup to stop animation
+      typed.destroy();
+    };
+  }, []);
   return (
-    
-    
+    <>
+     <div className="text-2xl"><span className="mix-blend-color-dodge" ref={el}></span></div>
     <div
-      ref={containerRef}
-      className={`flex flex-col msm:items-center xsm:items-center xsm:mt-20 xsm:m-auto msm:justify-center msm:w-96 msm:h-96 xsm:w-56 xsm:h-56 xsm:justify-center rounded-full`}
+     
+      className={`flex text-white flex-col msm:items-center xsm:items-center xsm:mt-20 xsm:m-auto msm:justify-center msm:w-fit msm:h-fit xsm:w-fit xsm:h-fit xsm:justify-center rounded-full`}
     >
      
+     
+   
       <Avatar
         alt="Profile"
         src="/static/images/profile1.jpg"
@@ -92,8 +111,9 @@ function CircularMotion() {
           </a>
         </div>
       ))}
-    </div>
     
+    </div>
+    </>
   );
 }
 

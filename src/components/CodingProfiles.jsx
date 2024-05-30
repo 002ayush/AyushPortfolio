@@ -22,7 +22,7 @@ function CodingProfiles() {
 */
   return (
     <>
-      <div className="text-left">
+      <div className="text-left p-10">
         <h1 className="text-2xl">
           <u>Coding Profiles</u>
         </h1>
@@ -38,17 +38,23 @@ function CodingProfiles() {
               marginTop: "15px",
 
               backfaceVisibility: "hidden",
-              '@media (max-width: 600px)' : {
-                width : "80%",
-                height:"60%"
-              }
+              "@media (max-width: 600px)": {
+                width: "80%",
+                height: "60%",
+              },
             }}
           >
             <CardContent sx={{ backgroundColor: "gray" }}>
               <div className="flex flex-row xsm:gap-0 items-center justify-center gap-3">
                 <h2 className="text-center">LeetCode Statistics</h2>
                 <div>
-                  <a href="https://leetcode.com/u/texture_11/ " target="_blank"><img src={"/src/assets/global.png"} width={20} height={20} /></a>
+                  <a href="https://leetcode.com/u/texture_11/ " target="_blank">
+                    <img
+                      src={"/static/images/global.png"}
+                      width={20}
+                      height={20}
+                    />
+                  </a>
                 </div>
               </div>
               <div className="flex flex-row justify-between">
@@ -82,19 +88,29 @@ function CodingProfiles() {
               height: "20%",
 
               marginTop: "15px",
-              margin:'auto',
+              margin: "auto",
               backfaceVisibility: "hidden",
-              '@media (max-width: 600px)' : {
-                width : "80%",
-                height:"60%",marginTop:'12px'
-              }
+              "@media (max-width: 600px)": {
+                width: "80%",
+                height: "60%",
+                marginTop: "12px",
+              },
             }}
           >
             <CardContent sx={{ backgroundColor: "gray" }}>
               <div className="flex flex-row items-center justify-center gap-3">
                 <h2 className="text-center">CodeForces Statistics</h2>
                 <div>
-                <a href="https://codeforces.com/profile/Ayush_11" target="_blank"><img src={"/src/assets/global.png"} width={20} height={20} /></a>
+                  <a
+                    href="https://codeforces.com/profile/Ayush_11"
+                    target="_blank"
+                  >
+                    <img
+                      src={"/static/images/global.png"}
+                      width={20}
+                      height={20}
+                    />
+                  </a>
                 </div>
               </div>
               <div className="flex flex-col    items-center">
@@ -112,21 +128,30 @@ function CodingProfiles() {
               width: "26%",
               borderRadius: "30px",
               height: "20%",
-            marginLeft : 'auto',
-              
+              marginLeft: "auto",
+
               backfaceVisibility: "hidden",
-              '@media (max-width: 600px)' : {
-                width : "80%",
-                height:"60%",
-                marginTop:'12px'
-              }
+              "@media (max-width: 600px)": {
+                width: "80%",
+                height: "60%",
+                marginTop: "12px",
+              },
             }}
           >
             <CardContent sx={{ backgroundColor: "gray" }}>
               <div className="flex flex-row items-center justify-center gap-3">
                 <h2 className="text-center">CodeStudio Statistics</h2>
                 <div>
-                <a href="https://www.naukri.com/code360/profile/40558f4e-526d-4f60-8b63-ba9eae763d98 " target="_blank"><img src={"/src/assets/global.png"} width={20} height={20} /></a>
+                  <a
+                    href="https://www.naukri.com/code360/profile/40558f4e-526d-4f60-8b63-ba9eae763d98 "
+                    target="_blank"
+                  >
+                    <img
+                      src={"static/images/global.png"}
+                      width={20}
+                      height={20}
+                    />
+                  </a>
                 </div>
               </div>
 
@@ -142,8 +167,12 @@ function CodingProfiles() {
       </div>
 
       <div>
-       <a href="/src/assets/Ayush_Resume.pdf" download> <button className="border-2 xsm:mt-10 bg-gray-800 p-4 text-white rounded-2xl border-emerald-900">Download Resume</button>
-       </a>
+        <a href="/src/assets/Ayush_Resume.pdf" download>
+          {" "}
+          <button className="border-2 xsm:mt-10 bg-gray-800 p-4 text-white rounded-2xl border-emerald-900">
+            Download Resume
+          </button>
+        </a>
       </div>
       <br></br>
     </>

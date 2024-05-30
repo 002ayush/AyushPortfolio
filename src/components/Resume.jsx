@@ -3,7 +3,7 @@
 function Resume() {
   return (
     <>
-      <div className=' border-black h-fit bg-slate-300'>
+      <div className=' border-black text-black w-screen p-10 bg-slate-300'>
           <h1 className='text-3xl text-left mb-10'><u>Education Details</u></h1>
           {/* Education Details */}
           <div className='text-left border'>

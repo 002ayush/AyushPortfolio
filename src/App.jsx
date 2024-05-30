@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 function App() {
   return (
     <>
-      <div className="text-center text-xl font-bold">
+      <div className="text-center font-bold">
         <Navbar />
       </div>
     </>

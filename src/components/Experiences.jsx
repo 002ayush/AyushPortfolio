@@ -1,8 +1,8 @@
 function Experiences() {
   return (
     <>
-      <div className="text-left">
-        <h1 className="text-left text-3xl mb-6 mt-3">
+      <div className="text-left p-10">
+        <h1 className="text-left mix-blend-color-dodge text-3xl mb-6 mt-3">
           <u>Experiences</u>
         </h1>
         <div>

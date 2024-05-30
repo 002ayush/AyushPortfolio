@@ -1,0 +1,19 @@
+body{
+  background-image: url('/static/images/starsky.jpg');
+  animation: starsAnim 5s ease-in-out infinite; 
+  
+  background-size: cover;
+  
+  
+  
+}
+@keyframes starsAnim {
+  0%{
+    background-size: 30%;
+  }
+  100%{
+    background-size: 70%;
+  }
+  
+
+}

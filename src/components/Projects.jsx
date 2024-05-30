@@ -1,7 +1,7 @@
 function Projects() {
   return (
     <>
-      <div className="text-left h-fit bg-slate-300 mt-5">
+      <div className="text-left p-10 w-screen text-black h-fit bg-slate-300 mt-5">
         <h1 className="text-3xl mb-6 mt-3">
           <u>Projects</u>
         </h1>

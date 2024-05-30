@@ -1,22 +1,37 @@
 import { Card, CardContent, CardMedia, Typography, styled } from "@mui/material";
+import { useEffect, useState } from "react";
 export default function About() {
+  const [rotation,setRotation] = useState(80)
   const FlipCardInner = styled('div')({
     position: 'relative',
     width: '100%',
     height: '100%',
     textAlign: 'center',
-    transition: 'transform 3s',
+    transition: 'transform 1s',
     transformStyle: 'preserve-3d',
-    '&:hover': {
-      transform: 'rotateY(360deg)',
-    },
+    transform: `rotateY(${(-1)*rotation}deg)`,
+    
   })
   const FlipCard = styled('div')({
     perspective: '1000px',
     width: '50vw',
     height: '50vh',
     margin: '3px auto',
+   
   })
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPercentage = (window.scrollY+rotation) / (document.body.scrollHeight);
+      const newRotation = scrollPercentage * rotation;
+      setRotation(newRotation);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     
     <>
@@ -32,9 +47,8 @@ export default function About() {
           height: "100%",
           margin: "auto",
           marginTop: "5px",
-          backfaceVisibility : 'hidden'
-          
-        }}
+          backfaceVisibility : 'hidden',
+           }}
       >
         <CardMedia
           component="img"
@@ -48,9 +62,10 @@ export default function About() {
             fontSize:'18px',
             marginTop: "3px",
             borderRadius: "10px", // Rounded corners
+          
           }}
         />
-        <CardContent>
+        <CardContent >
           <Typography
             style={{ fontWeight: "bold" }}
             gutterBottom
@@ -59,7 +74,7 @@ export default function About() {
           >
             Ayush Mishra
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="body2" color="text.secondary" style={{fontSize:'x-small'}}>
             A dedicated and motivated professional with a strong passion for
             problem-solving and development. Highly proficient in data
             structures and algorithms, I excel at addressing complex challenges
