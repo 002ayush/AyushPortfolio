@@ -9,6 +9,13 @@ import Resume from "./Resume";
 import Skills from "./Skills";
 
 function Navbar() {
+    
+    const handleClick = (id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    };
   const useWindowWidth = () => {
     const [width, setWidth] = useState(window.innerWidth);
   
@@ -34,12 +41,12 @@ function Navbar() {
        <div className="border-2 border-white w-10 mt-1"></div>
        <div className="border-2 border-white w-10 mt-1"></div></div>}
          {(width >= 600 || toggle) && <ul  className="transition-all delay-1000 ease-in-out flex msm:flex-row msm:gap-4 xsm:gap-2 gap-36 xsm:flex-col xsm:text-center msm:fixed  end-4  cursor-pointer text-opacity-85 z-50  top-0">
-            <li className="hover:text-xl hover:opacity-70 ">Home</li>
-            <li className="hover:text-xl hover:opacity-70">About</li>
-            <li className="hover:text-xl hover:opacity-70">Contact Me</li>
+            <li className="hover:text-xl hover:opacity-70 "><a onClick={()=>handleClick('home')} href="#home">Home</a></li>
+            <li className="hover:text-xl hover:opacity-70"><a onClick={()=>handleClick('about')} href="#about">About</a></li>
+            <li className="hover:text-xl hover:opacity-70"><a onClick={()=>handleClick('project')} href="#project">Projects</a></li>
           </ul>}
 
-          <div className="flex msm:flex-row xsm:flex-col msm:items-center   msm:justify-around msm:absolute msm:mt-10 w-screen ">
+          <div id="home" className="flex msm:flex-row xsm:flex-col msm:items-center   msm:justify-around msm:absolute msm:mt-10 w-screen ">
             <div>
               <Skills />
             </div>
@@ -54,10 +61,8 @@ function Navbar() {
           </div>
         </div>
         {/* <div className="border border-black absolute top-[543px] w-screen"></div> */}
-        <section>
-          <div className="ml-5">
-            <About />
-          </div>
+        <section id="about">
+            <About />   
         </section>
         <section>
           <Resume />
@@ -65,7 +70,7 @@ function Navbar() {
         <section>
           <Experiences />
         </section>
-        <section>
+        <section id="project">
           <Projects />
         </section>
         <section>

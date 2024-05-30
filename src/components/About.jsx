@@ -1,15 +1,15 @@
 import { Card, CardContent, CardMedia, Typography, styled } from "@mui/material";
 import { useEffect, useState } from "react";
 export default function About() {
-  const [rotation,setRotation] = useState(80)
+  const [rotation,setRotation] = useState(180)
   const FlipCardInner = styled('div')({
     position: 'relative',
     width: '100%',
     height: '100%',
     textAlign: 'center',
-    transition: 'transform 1s',
+    transition: 'transform 3s',
     transformStyle: 'preserve-3d',
-    transform: `rotateY(${(-1)*rotation}deg)`,
+    transform: `rotateY(${rotation}deg)`,
     
   })
   const FlipCard = styled('div')({
@@ -21,7 +21,7 @@ export default function About() {
   })
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPercentage = (window.scrollY+rotation) / (document.body.scrollHeight);
+      const scrollPercentage = (window.scrollY) / (document.body.scrollHeight - window.innerHeight);
       const newRotation = scrollPercentage * rotation;
       setRotation(newRotation);
     };
